@@ -6,7 +6,8 @@
 ## Install reactjs
     * npm install -g create-react-app : se tao thu vien o lib, su dung o bat cu noi nao cung duoc
         => /usr/local/bin/create-react-app -> /usr/local/lib/node_modules/create-react-app/index.js
-    * create-react-app appName: tao 1 app moi
+        => (windown) C:\Users\dathuynh\AppData\Roaming\npm\create-react-app -> C:\Users\dathuynh\AppData\Roaming\npm\node_modules\create-react-app\index.js
+    * create-react-app appName: tao 1 app moi, chứa các thư viện cần cho reactjs
         ```
         Installing react, react-dom, and react-scripts
         npm start
@@ -21,3 +22,4 @@
             cd vd1
             npm start
         ```
+    * lưu ý: khi pull pj reactjs về khi ko thay 'node_modules' ta run 'npm install' installs all the packages in package.json
