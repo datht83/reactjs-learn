@@ -1,32 +1,35 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-
-function One() {
+// khai bao component c1
+function One(props) {
    return (
-    <div>
-      <div> cach 1-1</div>
-      <div> cach 1-2</div> 
-    </div> 
+      <div className="col-6">
+        <div className="card-deck">
+          <div className="card">
+            <img className="card-img-top" src={props.url} alt="" />
+            <div className="card-body">
+              <h4 className="card-title">{ props.title }</h4>
+              <p className="card-text">Text</p>
+            </div>
+          </div>
+        </div>
+      </div> 
    )
 }
-var Two = function(){
-  return (
-    <div> 
-      <h1> Cach so 2 </h1>
-    </div>
-  )  
-}
-var Three = () => (
-  <div>
-    <h1>cach 3</h1>
-  </div>
-)
-class Four extends Component {
+// khai bao component voi ooclass
+class ClassComponent extends Component {
   render() {
     return (
-      <div>
-        <h1>cach so 4 - class component</h1>
+      <div className="col-4">
+        <div className="card">
+            <img className="card-img-top" src={this.props.url} alt="" />
+            <div className="card-body">
+              <h4 className="card-title">{ this.props.title }</h4>
+              <p className="card-text">Text2</p>
+            </div>
+          </div>
+        
       </div>
     );
   }
@@ -39,37 +42,16 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <div id="accordianId" role="tablist" aria-multiselectable="true">
-            <div class="card">
-              <div class="card-header" role="tab" id="section1HeaderId">
-                <h5 class="mb-0">
-                  <a data-toggle="collapse" data-parent="#accordianId" href="#section1ContentId" aria-expanded="true" aria-controls="section1ContentId">
-                    Section 1
-                  </a>
-                </h5>
-              </div>
-              <div id="section1ContentId" class="collapse in" role="tabpanel" aria-labelledby="section1HeaderId">
-                <div class="card-body">
-                  Section 1 content
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-header" role="tab" id="section2HeaderId">
-                <h5 class="mb-0">
-                  <a data-toggle="collapse" data-parent="#accordianId" href="#section2ContentId" aria-expanded="true" aria-controls="section2ContentId">
-                    Section 2
-                  </a>
-                </h5>
-              </div>
-              <div id="section2ContentId" class="collapse in" role="tabpanel" aria-labelledby="section2HeaderId">
-                <div class="card-body">
-                  Section 2 content
-                </div>
-              </div>
-            </div>
-          </div>
         </header>
+        <div className="container">
+          <div className="row">
+            <One title="sp 1" url="https://znews-photo.zadn.vn/w660/Uploaded/BzcwvoBL/2018_12_09/hai.jpg" />
+            <One title="sp 2" url="https://znews-photo.zadn.vn/w660/Uploaded/jaegtn/2018_12_09/huawei_off_thumb.jpg" />
+            <ClassComponent title="class 1" url="https://znews-photo.zadn.vn/w660/Uploaded/jgtnrz/2018_12_09/giang_sinh_3_thumb.jpg" />
+            <ClassComponent title="class 2" url="https://znews-photo.zadn.vn/w660/Uploaded/pgi_dhbpgunat/2018_12_08/merlin_147864855_85db36cf450f4b8ca0c63c04bccbf578superJumbo_thumb.jpg" />
+            <ClassComponent title="class 3" url="https://znews-photo.zadn.vn/w480/Uploaded/bpivpjbp/2018_12_08/ZuWThpinryc7490313ava.jpg" />
+          </div>
+        </div>
       </div>
     );
   }
